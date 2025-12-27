@@ -39,4 +39,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=XQ-AS72 \
     PRIVATE_BUILD_DESC="XQ-AS72-user 12 58.2.A.10.126 058002A010012603718185433 release-keys"
 
+# GApps Support
+# Usage: WITH_GMS=true mka bacon
+ifeq ($(WITH_GMS),true)
+    $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+endif
+
 BUILD_FINGERPRINT := Sony/XQ-AS72/XQ-AS72:12/58.2.A.10.126/058002A010012603718185433:user/release-keys
